@@ -77,14 +77,17 @@ namespace UnitTestTicTacToe
                     {
                         for(int j=0;j<O.Count;j++)
                         {
-                            int difference = 15 - (O[i] + O[j]);
-                            if(difference<0 || difference > 9)
-                            {
-                                // ignore
-                            }
-                            else
-                            {
-                                return Array.IndexOf(Positions,difference);
+                            if(i!=j)
+                            { 
+                                int difference = 15 - (O[i] + O[j]);
+                                if(difference<0 || difference > 9)
+                                {
+                                    // ignore
+                                }
+                                else
+                                {
+                                    return Array.IndexOf(Positions,difference);
+                                }
                             }
                         }
                     }
@@ -98,14 +101,17 @@ namespace UnitTestTicTacToe
                     {
                         for (int j = 0; j < X.Count; j++)
                         {
-                            int difference = 15 - (X[i] + X[j]);
-                            if (difference < 0 || difference > 9)
-                            {
-                                // ignore
-                            }
-                            else
-                            {
-                                return Array.IndexOf(Positions, difference);
+                            if (i != j)
+                            { 
+                                int difference = 15 - (X[i] + X[j]);
+                                if (difference < 0 || difference > 9)
+                                {
+                                    // ignore
+                                }
+                                else
+                                {
+                                    return Array.IndexOf(Positions, difference);
+                                }
                             }
                         }
                     }

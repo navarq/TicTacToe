@@ -63,7 +63,7 @@ namespace UnitTestTicTacToe
         }
 
         [TestMethod]
-        public void TestBoard_TestPossibleWinTopRow()
+        public void TestBoard_TestPossibleWinTopRow_WinForCrossAtPosition2()
         {
             Board board = new Board();
 
@@ -72,6 +72,19 @@ namespace UnitTestTicTacToe
             board.Go(1);
             board.Go(5);
             Assert.AreEqual(2, board.PossibleWin(State.X));
+        }
+
+        [TestMethod]
+        public void TestBoard_TestPossibleWinTopRow_WinForNoughtAtPosition4()
+        {
+            Board board = new Board();
+
+            board.Go(0);
+            board.Go(4);
+            board.Go(1);
+            board.Go(5);
+            board.Go(6);
+            Assert.AreEqual(3, board.PossibleWin(State.O));
         }
     }
 }
